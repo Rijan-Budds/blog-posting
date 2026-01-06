@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tiptap/core": "^3.15.0",
     "@tiptap/extension-color": "^3.15.0",
     "@tiptap/extension-image": "^3.15.0",
     "@tiptap/extension-link": "^3.15.0",

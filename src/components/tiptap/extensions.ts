@@ -26,11 +26,11 @@ export const FontSize = Mark.create({
             setFontSize:
                 size =>
                     ({ commands }) => {
-                        return commands.setMark(this.name, { size });
+                        return commands.setMark('fontSize', { size });
                     },
             unsetFontSize:
                 () =>
-                    ({ commands }) => commands.unsetMark(this.name),
+                    ({ commands }) => commands.unsetMark('fontSize'),
         };
     },
 });
@@ -61,11 +61,11 @@ export const FontFamily = Mark.create({
             setFontFamily:
                 family =>
                     ({ commands }) => {
-                        return commands.setMark(this.name, { family });
+                        return commands.setMark('fontFamily', { family });
                     },
             unsetFontFamily:
                 () =>
-                    ({ commands }) => commands.unsetMark(this.name),
+                    ({ commands }) => commands.unsetMark('fontFamily'),
         };
     },
 });
