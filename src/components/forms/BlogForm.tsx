@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import BlogEditor from "@/components/BlogEditor";
 
 export default function BlogForm() {
   const [title, setTitle] = useState("");
@@ -29,23 +30,25 @@ export default function BlogForm() {
     <>
       <h1>Hi, let's make a new blog post. Shall we?!</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <label>Title</label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+          className="border p-2 rounded"
         />
 
         <label>Content</label>
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          required
-        ></textarea>
+        <BlogEditor value={content} onChange={setContent} />
 
-        <button type="submit">Publish</button>
+        <button
+          type="submit"
+          className="mt-3 p-2 bg-black text-white rounded"
+        >
+          Publish
+        </button>
       </form>
 
       {message && <p>{message}</p>}
