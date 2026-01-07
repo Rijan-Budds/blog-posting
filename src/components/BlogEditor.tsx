@@ -8,6 +8,7 @@ import Color from "@tiptap/extension-color";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
 import { FontSize, FontFamily } from "./tiptap/extensions";
+import Placeholder from "@tiptap/extension-placeholder";
 
 export default function BlogEditor({ value, onChange }: { value: string; onChange: (content: string) => void }) {
     const editor = useEditor({
@@ -20,10 +21,13 @@ export default function BlogEditor({ value, onChange }: { value: string; onChang
             Image,
             FontSize,
             FontFamily,
+            Placeholder.configure({
+                placeholder: 'Start writing...',
+            }),
         ],
-        content: value || "<p>Start writing...</p>",
+        content: value || '',
         onUpdate: ({ editor }) => onChange(editor.getHTML()),
-        immediatelyRender: false, // avoids SSR issues
+        immediatelyRender: false,
     });
 
     if (!editor) return null;
