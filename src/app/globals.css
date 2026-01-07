@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+/* Custom CSS Variables */
+:root {
+    /* Color Palette */
+    --color-primary: #3B82F6;
+    --color-primary-dark: #2563EB;
+    --color-primary-light: #60A5FA;
+    --color-background: #F9FAFB;
+    --color-surface: #FFFFFF;
+    --color-text: #111827;
+    --color-text-secondary: #6B7280;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+    .bg-primary {
+        background-color: var(--color-primary);
+    }
+
+    .bg-primary-dark {
+        background-color: var(--color-primary-dark);
+    }
+
+    .bg-primary-light {
+        background-color: var(--color-primary-light);
+    }
+
+    .text-primary {
+        color: var(--color-primary);
+    }
+
+    .text-primary-light {
+        color: var(--color-primary-light);
+    }
+
+    .border-primary {
+        border-color: var(--color-primary);
+    }
+
+    .hover\:bg-primary-dark:hover {
+        background-color: var(--color-primary-dark);
+    }
+
+    .hover\:bg-primary-light:hover {
+        background-color: var(--color-primary-light);
+    }
+
+    .hover\:text-primary-light:hover {
+        color: var(--color-primary-light);
+    }
+
+    .focus\:border-primary:focus {
+        border-color: var(--color-primary);
+    }
+
+    .focus\:ring-primary:focus {
+        --tw-ring-color: var(--color-primary);
+    }
+}
